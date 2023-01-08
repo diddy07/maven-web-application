@@ -31,6 +31,7 @@ node{
       }
 }
 stage('7deploy2Prod'){
+sh "sleep 50"
    deploy adapters: [tomcat9(credentialsId: 'TomCatDiddycredentials', path: '', url: 'http://54.91.148.190:8177/')], contextPath: null, war: 'target/*war' 
   }
   
